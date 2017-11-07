@@ -1,4 +1,4 @@
-#N canvas 822 313 339 490 10;
+#N canvas 1177 256 339 490 10;
 #X obj 76 40 vsl 15 128 1 2 0 0 empty empty VQ 2 -9 0 10 -262144 -1
 -1 6350 1;
 #X obj 111 -53 loadbang;
@@ -49,7 +49,7 @@
 #X text 155 -30 Voice 'Filter';
 #X text 21 -30 Voice 'Source';
 #X text 8 253 formant filters =>;
-#N canvas 1124 222 538 632 2dinput 0;
+#N canvas -8 -8 1920 997 2dinput 1;
 #X msg 117 117 destroy;
 #X msg 64 117 create;
 #X msg 23 117 1;
@@ -58,21 +58,21 @@
 #X msg 299 116 dimen 500 500;
 #X obj 188 361 translateXYZ 0 0 0;
 #X floatatom 287 256 5 0 0 0 - - -;
-#X floatatom 348 256 5 0 0 0 - - -;
+#X floatatom 823 339 5 0 0 0 - - -;
 #X floatatom 287 324 5 0 0 0 - - -;
-#X floatatom 348 324 5 0 0 0 - - -;
+#X floatatom 892 566 5 0 0 0 - - -;
 #X obj 287 302 - 4;
 #X obj 331 202 gemmouse 8 8;
-#X obj 348 302 -;
-#X obj 348 277 swap 4;
+#X obj 892 520 -;
+#X obj 920 478 swap 4;
 #X obj 435 561 outlet;
-#X obj 369 561 outlet;
+#X obj 1268 467 outlet;
 #X obj 435 350 swap 8;
 #X obj 435 378 -;
 #X floatatom 435 528 5 0 0 0 - - -;
 #X obj 435 406 / 8;
-#X floatatom 369 528 5 0 0 0 - - -;
-#X obj 369 406 / 8;
+#X floatatom 1268 434 5 0 0 0 - - -;
+#X obj 1268 312 / 8;
 #X obj 64 168 gemwin 10;
 #X text 82 1 GEM GRAPHICS;
 #X obj 24 31 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -83,7 +83,7 @@
 #X text 62 414 make it a circle =>;
 #X text 168 202 get data from the mouse =>;
 #X msg 394 115 color 0 0 0.25;
-#X text 371 580 F1;
+#X text 1270 486 F1;
 #X text 450 580 F2;
 #X obj 188 414 circle 0.2;
 #X text 72 483 convert mouse position to formant values =>;
@@ -91,11 +91,11 @@
 #X obj 14 490 pix_draw;
 #X obj 188 306 color 1 0 0;
 #X text 95 306 make it red =>;
-#X floatatom 369 434 5 0 0 0 - - -;
+#X floatatom 1268 340 5 0 0 0 - - -;
 #X floatatom 435 434 5 0 0 0 - - -;
-#X obj 369 499 + 137;
+#X obj 1268 405 + 137;
 #X obj 435 499 + 654;
-#X obj 369 471 * 717;
+#X obj 1268 377 * 717;
 #X obj 435 471 * 1742;
 #X obj 14 452 pix_image vowel_quadrilateral.jpg;
 #X msg 183 117 title Example 8-1;
@@ -106,6 +106,9 @@
 #X obj 489 562 outlet;
 #X text 488 580 mouse;
 #X obj 188 388 spigot;
+#X msg 922 342 1.761;
+#X obj 951 268 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X connect 0 0 23 0;
 #X connect 1 0 23 0;
 #X connect 2 0 23 0;
@@ -119,8 +122,6 @@
 #X connect 6 0 53 0;
 #X connect 7 0 11 0;
 #X connect 7 0 17 0;
-#X connect 8 0 14 0;
-#X connect 8 0 22 0;
 #X connect 9 0 6 1;
 #X connect 10 0 6 2;
 #X connect 11 0 9 0;
@@ -155,6 +156,9 @@
 #X connect 50 0 51 0;
 #X connect 50 0 53 1;
 #X connect 53 0 34 0;
+#X connect 54 0 14 0;
+#X connect 54 0 22 0;
+#X connect 55 0 54 0;
 #X restore 154 -4 pd 2dinput;
 #X obj 154 102 sig~;
 #X obj 235 101 sig~;
@@ -181,9 +185,9 @@
 #X connect 9 0 19 0;
 #X connect 10 0 3 0;
 #X connect 11 0 23 0;
-#X connect 15 0 8 0;
-#X connect 15 1 9 0;
-#X connect 15 2 24 0;
+#X connect 15 0 9 0;
+#X connect 15 1 24 0;
+#X connect 15 2 8 0;
 #X connect 16 0 20 1;
 #X connect 17 0 21 1;
 #X connect 18 0 20 2;
