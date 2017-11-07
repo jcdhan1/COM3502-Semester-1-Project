@@ -1,4 +1,4 @@
-#N canvas 765 124 339 490 10;
+#N canvas 822 313 339 490 10;
 #X obj 76 40 vsl 15 128 1 2 0 0 empty empty VQ 2 -9 0 10 -262144 -1
 -1 6350 1;
 #X obj 111 -53 loadbang;
@@ -19,7 +19,7 @@
 #X obj 90 353 cos~;
 #X obj 90 150 sig~;
 #X obj 91 183 phasor~;
-#X floatatom 90 82 5 0 0 0 - - -, f 5;
+#X floatatom 90 82 5 0 0 0 - - -;
 #X obj 90 319 clip~ -0.5 0.5;
 #X obj 90 217 sqrt~;
 #X obj 91 285 *~;
@@ -40,16 +40,16 @@
 #X connect 15 0 13 0;
 #X connect 16 0 10 0;
 #X restore 25 217 pd larynx;
-#X floatatom 25 186 5 0 0 0 - - -, f 5;
-#X floatatom 76 186 5 0 0 0 - - -, f 5;
-#X floatatom 154 41 5 0 0 0 - - -, f 5;
-#X floatatom 235 41 5 0 0 0 - - -, f 5;
+#X floatatom 25 186 5 0 0 0 - - -;
+#X floatatom 76 186 5 0 0 0 - - -;
+#X floatatom 154 41 5 0 0 0 - - -;
+#X floatatom 235 41 5 0 0 0 - - -;
 #X msg 25 -4 150;
 #X obj 162 283 +~;
 #X text 155 -30 Voice 'Filter';
 #X text 21 -30 Voice 'Source';
 #X text 8 253 formant filters =>;
-#N canvas 633 0 638 668 2dinput 1;
+#N canvas 1124 222 538 632 2dinput 0;
 #X msg 117 117 destroy;
 #X msg 64 117 create;
 #X msg 23 117 1;
@@ -57,10 +57,10 @@
 #X obj 49 78 t b b b b b;
 #X msg 299 116 dimen 500 500;
 #X obj 188 361 translateXYZ 0 0 0;
-#X floatatom 287 256 5 0 0 0 - - -, f 5;
-#X floatatom 348 256 5 0 0 0 - - -, f 5;
-#X floatatom 287 324 5 0 0 0 - - -, f 5;
-#X floatatom 348 324 5 0 0 0 - - -, f 5;
+#X floatatom 287 256 5 0 0 0 - - -;
+#X floatatom 348 256 5 0 0 0 - - -;
+#X floatatom 287 324 5 0 0 0 - - -;
+#X floatatom 348 324 5 0 0 0 - - -;
 #X obj 287 302 - 4;
 #X obj 331 202 gemmouse 8 8;
 #X obj 348 302 -;
@@ -69,9 +69,9 @@
 #X obj 369 561 outlet;
 #X obj 435 350 swap 8;
 #X obj 435 378 -;
-#X floatatom 435 528 5 0 0 0 - - -, f 5;
+#X floatatom 435 528 5 0 0 0 - - -;
 #X obj 435 406 / 8;
-#X floatatom 369 528 5 0 0 0 - - -, f 5;
+#X floatatom 369 528 5 0 0 0 - - -;
 #X obj 369 406 / 8;
 #X obj 64 168 gemwin 10;
 #X text 82 1 GEM GRAPHICS;
@@ -91,8 +91,8 @@
 #X obj 14 490 pix_draw;
 #X obj 188 306 color 1 0 0;
 #X text 95 306 make it red =>;
-#X floatatom 369 434 5 0 0 0 - - -, f 5;
-#X floatatom 435 434 5 0 0 0 - - -, f 5;
+#X floatatom 369 434 5 0 0 0 - - -;
+#X floatatom 435 434 5 0 0 0 - - -;
 #X obj 369 499 + 137;
 #X obj 435 499 + 654;
 #X obj 369 471 * 717;
@@ -106,8 +106,6 @@
 #X obj 489 562 outlet;
 #X text 488 580 mouse;
 #X obj 188 388 spigot;
-#X text 384 253 Vertical;
-#X text 219 273 Horizontal;
 #X connect 0 0 23 0;
 #X connect 1 0 23 0;
 #X connect 2 0 23 0;
