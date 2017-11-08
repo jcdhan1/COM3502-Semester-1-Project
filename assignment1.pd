@@ -1,0 +1,30 @@
+#N canvas 143 322 831 710 10;
+#X obj 285 308 formant_reader;
+#X floatatom 117 360 5 0 0 0 - - -;
+#X floatatom 198 361 5 0 0 0 - - -;
+#X obj 406 111 adc~;
+#X text 116 149 Audio Input;
+#X obj 260 178 openpanel;
+#X msg 274 213 open \$1;
+#X obj 176 210 readsf~;
+#X obj 213 144 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 72 195 1;
+#X obj 176 269 dac~;
+#X obj 406 25 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 451 179 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 477 180 Start/Stop Measuring;
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 10 0;
+#X connect 7 0 10 1;
+#X connect 7 0 0 0;
+#X connect 8 0 5 0;
+#X connect 9 0 7 0;
+#X connect 11 0 3 0;
+#X connect 12 0 0 1;
+#X connect 12 0 9 0;
