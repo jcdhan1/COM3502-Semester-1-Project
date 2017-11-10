@@ -1,106 +1,101 @@
-#N canvas 627 164 1908 997 10;
-#X obj -585 -22436 formant_reader;
-#X floatatom -545 -22364 5 0 0 0 - - -;
-#X obj -715 -22206 adc~;
-#X text -963 -22479 Audio Input;
-#X obj -819 -22433 openpanel;
-#X msg -819 -22396 open \$1;
-#X obj -903 -22433 readsf~;
-#X obj -867 -22478 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#N canvas -11 -11 1920 1016 10;
+#X obj -1228 -22659 formant_reader;
+#X floatatom -1188 -22587 5 0 0 0 - - -;
+#X obj -1358 -22429 adc~;
+#X text -1606 -22702 Audio Input;
+#X obj -1462 -22656 openpanel;
+#X msg -1462 -22619 open \$1;
+#X obj -1546 -22656 readsf~;
+#X obj -1510 -22701 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj -903 -22359 dac~;
-#X floatatom -585 -22364 5 0 0 0 - - -;
-#X msg -519 -22567 stop;
-#X msg -486 -22567 reset;
-#X msg -552 -22567 bang;
-#X text -678 -22304 First Formant;
-#X text -678 -22013 Second Formant;
-#X text -555 -22590 Click these to start \, stop and restart reading
+#X obj -1546 -22582 dac~;
+#X floatatom -1228 -22587 5 0 0 0 - - -;
+#X msg -1162 -22790 stop;
+#X msg -1129 -22790 reset;
+#X msg -1195 -22790 bang;
+#X text -1321 -22527 First Formant;
+#X text -1321 -22236 Second Formant;
+#X text -1198 -22813 Click these to start \, stop and restart reading
 \, respectively;
-#X floatatom -396 -22286 5 0 0 0 - - -;
-#X text -405 -22304 Mean;
-#X floatatom -396 -21993 5 0 0 0 - - -;
-#X floatatom -329 -22286 8 0 0 0 - - -;
-#X floatatom -329 -21993 8 0 0 0 - - -;
-#X obj -585 -22303 10secStats array1;
-#X floatatom -190 -22285 5 0 0 0 - - -;
-#X floatatom -189 -21993 5 0 0 0 - - -;
-#X text -213 -22304 Standard Deviation;
-#X text -337 -22304 Variance;
-#X obj -279 -22270 expr sqrt($f1);
-#X obj -278 -21977 expr sqrt($f1);
-#X msg -959 -22438 1;
-#X obj -585 -22010 10secStats array2;
-#X floatatom -235 -22538 5 0 0 0 - - -;
-#X obj -235 -22399 select 99;
+#X msg -1602 -22661 1;
 #N canvas 0 0 450 300 (subpatch) 0;
-#X array array3 10 float 3;
-#A 0 0 1 0 0 0 0 0 0 0 0;
-#X coords 0 1 10 0 200 140 1 0 0;
-#X restore -86 -22274 graph;
-#X text -102 -22138 0;
-#X text 99 -22124 900;
-#X text -34 -22107 Frequency (Hz);
-#X text -127 -22283 100%;
-#X obj -298 -22323 send array3;
-#X text -821 -22578 Use live audio?;
-#X obj -715 -22573 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1
+#X array array3 100 float 5;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.0868347 0.00140056 0.00140056 0
+0 0 0.00280112 0 0 0 0 0 0.00140056 0 0 0 0 0 0 0.00140056 0.00140056
+0 0 0.00140056 0 0.00280112 0 0 0 0 0.00140056 0 0 0.00140056 0.00140056
+0 0 0 0 0 0 0 0.00140056 0.00280112 0 0 0.00140056 0.00420168 0.00140056
+0 0 0 0.00140056 0 0 0 0.00140056 0 0 0 0 0.00280112 0 0 0 0 0 0 0.00140056
+0 0 0 0 0 0 0 0 0 0 0 0.876751 0 0 0 0 0;
+#X coords 0 1 99 0 500 140 1 0 0;
+#X restore -729 -22497 graph;
+#X text -745 -22361 0;
+#X text -236 -22356 900;
+#X text -506 -22350 Frequency (Hz);
+#X text -770 -22506 100%;
+#X obj -941 -22546 send array3;
+#X text -1464 -22801 Use live audio?;
+#X obj -1358 -22796 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1
 -1 0 1;
-#X obj -715 -22544 select 1;
-#X obj -816 -22285 send~ recorded;
-#X obj -790 -22143 send~ recorded;
-#X obj -667 -22503 receive recorded;
+#X obj -1358 -22767 select 1;
+#X obj -1459 -22508 send~ recorded;
+#X obj -1433 -22366 send~ recorded;
+#X obj -1310 -22726 receive recorded;
 #N canvas 0 0 450 300 (subpatch) 0;
-#X array array4 10 float 3;
-#A 0 0 0 0 0 0 0 0 0 1 0;
-#X coords 0 1 10 0 200 140 1 0 0;
-#X restore -83 -22016 graph;
-#X text -99 -21880 0;
-#X text -31 -21849 Frequency (Hz);
-#X text -124 -22025 100%;
-#X floatatom -235 -22244 5 0 0 0 - - -;
-#X obj -235 -22105 select 99;
-#X obj -298 -22029 send array4;
-#X obj -298 -22348 f1Histogram;
-#X obj -298 -22054 f2Histogram;
-#X text 102 -21866 5000;
+#X array array4 500 float 5;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.00234192
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.00468384
+0 0 0 0 0 0 0 0 0 0.00234192 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.00234192
+0 0 0.00234192 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.00234192 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.00234192
+0 0 0 0 0 0.00234192 0 0 0 0.00234192 0.00234192 0.00468384 0.00234192
+0 0 0 0.00468384 0.00234192 0.00468384 0 0.00234192 0.00234192 0.00234192
+0 0 0 0 0 0.00234192 0 0.00234192 0.00234192 0 0.00234192 0.00234192
+0.00234192 0.00234192 0 0.00234192 0 0 0.00468384 0 0.00234192 0.00468384
+0 0 0 0.00468384 0.00234192 0 0 0.00468384 0 0 0.00234192 0 0.00468384
+0 0 0 0 0.00234192 0 0 0 0.00234192 0 0 0 0.00468384 0 0 0 0 0 0 0.00234192
+0 0 0 0.00234192 0 0 0.00234192 0.00468384 0 0 0 0 0 0.00234192 0 0
+0 0 0.00234192 0 0 0 0 0.00234192 0 0 0.00234192 0.00234192 0.00234192
+0 0 0 0 0 0.00234192 0 0 0 0 0.00234192 0 0 0 0 0 0 0 0.00234192 0
+0 0 0 0 0.00234192 0.00234192 0.00234192 0.00234192 0 0 0 0.00234192
+0 0 0 0 0 0 0.00234192 0.00234192 0 0 0 0.00234192 0 0 0.00234192 0
+0 0 0 0 0 0 0.00234192 0.00234192 0.00468384 0.00234192 0 0.00234192
+0 0 0 0 0 0 0 0 0 0.00234192 0.00234192 0.00234192 0 0.00234192 0 0.00234192
+0 0 0.00234192 0 0.00234192 0 0 0 0.00234192 0.00234192 0 0 0 0.00234192
+0.00234192 0 0 0 0 0 0 0.00234192 0 0 0.00234192 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0.00234192 0 0.00234192 0.00234192 0 0 0 0.00234192
+0.00234192 0 0 0 0 0 0.00234192 0.00234192 0 0 0 0 0 0 0 0 0.00234192
+0 0.75644 0;
+#X coords 0 1 499 0 500 140 1 0 0;
+#X restore -726 -22239 graph;
+#X text -742 -22103 0;
+#X text -519 -22086 Frequency (Hz);
+#X text -767 -22248 100%;
+#X obj -941 -22252 send array4;
+#X obj -941 -22571 f1Histogram;
+#X obj -941 -22277 f2Histogram;
+#X text -237 -22091 5000;
+#X floatatom -1035 -22159 5 0 0 0 - - -;
+#X floatatom -1002 -22466 5 0 0 0 - - -;
 #X connect 0 0 9 0;
 #X connect 0 1 1 0;
-#X connect 1 0 29 0;
-#X connect 1 0 52 0;
+#X connect 1 0 35 0;
 #X connect 2 0 0 0;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
 #X connect 6 0 8 0;
 #X connect 6 0 8 1;
 #X connect 6 0 0 0;
-#X connect 6 0 41 0;
+#X connect 6 0 26 0;
 #X connect 7 0 4 0;
-#X connect 9 0 21 0;
-#X connect 9 0 51 0;
-#X connect 10 0 21 2;
-#X connect 10 0 29 2;
-#X connect 11 0 21 3;
-#X connect 11 0 29 3;
-#X connect 12 0 21 1;
-#X connect 12 0 29 1;
-#X connect 19 0 26 0;
-#X connect 20 0 27 0;
-#X connect 21 1 16 0;
-#X connect 21 2 19 0;
-#X connect 21 5 30 0;
-#X connect 26 0 22 0;
-#X connect 27 0 23 0;
-#X connect 28 0 6 0;
-#X connect 29 1 18 0;
-#X connect 29 2 20 0;
-#X connect 29 5 48 0;
-#X connect 30 0 31 0;
-#X connect 31 0 51 1;
-#X connect 39 0 40 0;
-#X connect 40 1 28 0;
-#X connect 48 0 49 0;
-#X connect 49 0 52 1;
-#X connect 51 0 37 0;
-#X connect 52 0 50 0;
-#X coords 0 997 1 996 0 0 0;
+#X connect 9 0 34 0;
+#X connect 16 0 6 0;
+#X connect 24 0 25 0;
+#X connect 25 1 16 0;
+#X connect 34 0 22 0;
+#X connect 34 1 38 0;
+#X connect 35 0 33 0;
+#X connect 35 1 37 0;
+#X coords 0 1016 1 1015 0 0 0;
