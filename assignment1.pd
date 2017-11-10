@@ -1,4 +1,4 @@
-#N canvas 704 0 1204 944 10;
+#N canvas 792 0 1116 944 16;
 #X obj -585 -22489 formant_reader;
 #X floatatom -545 -22417 5 0 0 0 - - -;
 #X obj -715 -22259 adc~;
@@ -52,7 +52,7 @@
 #X obj -667 -22556 receive recorded;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array array4 10 float 3;
-#A 0 0 0 0 0 0 0 0 0 0.0120482 0;
+#A 0 0 0 0 0 0 0 0 0 0 0;
 #X coords 0 1 10 0 200 140 1 0 0;
 #X restore -83 -22069 graph;
 #X text -99 -21933 0;
