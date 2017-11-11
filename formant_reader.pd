@@ -1,4 +1,4 @@
-#N canvas 106 78 958 988 10;
+#N canvas -8 -8 1920 997 10;
 #X msg 1328 251 \; pd dsp 1;
 #X msg 1400 251 \; pd dsp 0;
 #X floatatom 29 225 5 0 0 0 - - -;
@@ -87,6 +87,7 @@
 #X obj 234 408 * 20;
 #X obj 227 527 + 4;
 #X obj 227 580 swap 8;
+#X text 626 150 Author: Jack Cheng Ding Han;
 #X connect 2 0 28 0;
 #X connect 3 0 28 1;
 #X connect 4 0 26 0;

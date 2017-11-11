@@ -69,6 +69,7 @@
 #X text 254 60 Pause Counting;
 #X obj 12 95 inlet~;
 #X obj 101 517 outlet;
+#X text 31 607 Author: Folabi Nathan-Marsh;
 #X connect 0 0 2 0;
 #X connect 0 0 18 0;
 #X connect 3 0 8 0;
