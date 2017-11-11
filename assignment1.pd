@@ -1,51 +1,46 @@
-#N canvas 0 267 1908 730 24;
-#X obj -3812 -24008 formant_reader;
-#X obj -3989 -24105 adc~;
-#X obj -4459 -23846 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#N canvas -8 -8 1920 997 24;
+#X obj -5598 -24438 formant_reader;
+#X obj -5972 -24539 adc~;
+#X obj -6460 -24476 bng 15 250 50 0 empty empty empty 0 0 0 10 -262144
 -1 -1;
-#X floatatom -3075 -23842 8 0 0 0 - - -;
-#X text -3076 -23868 Variance;
-#X obj -3235 -23815 expr sqrt($f1);
-#X obj -4458 -23525 send~ recorded;
-#X floatatom -3075 -23897 8 0 0 0 - - -;
-#X text -3076 -23923 Mean;
-#X floatatom -3075 -23787 8 0 0 0 - - -;
-#X text -3076 -23813 Standard Deviation;
-#X obj -3477 -24076 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X floatatom -5146 -24303 8 0 0 2 Variance - -;
+#X obj -5306 -24276 expr sqrt($f1);
+#X obj -6459 -24155 send~ recorded;
+#X floatatom -5146 -24358 8 0 0 2 Mean - -;
+#X floatatom -5146 -24248 8 0 0 2 Standard-Deviation - -;
+#X obj -5462 -24498 bng 15 250 50 0 empty empty Clear 0 -24 0 24 -262144
 -1 -1;
-#X floatatom -3662 -23842 8 0 0 0 - - -;
-#X obj -3822 -23815 expr sqrt($f1);
-#X text -3453 -23439 0;
-#X text -3485 -23744 100%;
+#X floatatom -5733 -24303 8 0 0 2 Variance - -;
+#X obj -5893 -24276 expr sqrt($f1);
+#X text -5524 -23900 0;
+#X text -5556 -24205 100%;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array Formant-2 10 float 5;
-#A 0 0 0 0 0 0 0 0 0.555556 0.444444 0;
+#A 0 0.00727802 0.00727802 0.0131004 0.0946143 0.315866 0.342067 0.131004
+0.0684134 0.0203785 0;
 #X coords 0 1 9 0 400 300 1 0 0;
-#X restore -3437 -23743 graph;
-#X floatatom -3662 -23897 8 0 0 0 - - -;
-#X text -3663 -23923 Mean;
-#X floatatom -3662 -23787 8 0 0 0 - - -;
-#X text -3329 -23771 Histogram;
-#X text -3069 -23442 3000 Hz;
-#X obj -4081 -23897 f1Histogram;
-#X obj -4081 -23859 send Formant-1;
-#X obj -3494 -23859 send Formant-2;
-#X obj -3494 -23897 f2Histogram;
-#X text -3663 -23868 Variance;
-#X text -3663 -23813 Standard Deviation;
-#X text -4040 -23439 0;
-#X text -4072 -23744 100%;
+#X restore -5508 -24204 graph;
+#X floatatom -5733 -24358 8 0 0 2 Mean - -;
+#X floatatom -5733 -24248 8 0 0 2 Standard-Deviation - -;
+#X text -5400 -24232 Histogram;
+#X text -5140 -23903 3000 Hz;
+#X obj -6152 -24320 send Formant-1;
+#X obj -5565 -24320 send Formant-2;
+#X obj -5565 -24358 f2Histogram;
+#X text -6111 -23900 0;
+#X text -6143 -24205 100%;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array Formant-1 10 float 5;
-#A 0 0 0.333333 0.333333 0.333333 0 0 0 0 0 0;
+#A 0 0 0.157205 0.0465793 0.120815 0.190684 0.243086 0.151383 0.0582242
+0.0320233 0;
 #X coords 0 1 9 0 400 300 1 0 0;
-#X restore -4024 -23743 graph;
-#X text -3916 -23771 Histogram;
-#X text -3656 -23442 900 Hz;
-#X obj -4184 -24106 receive~ recorded;
-#X obj -3748 -24066 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X restore -6095 -24204 graph;
+#X text -5987 -24232 Histogram;
+#X text -5727 -23903 900 Hz;
+#X obj -5913 -24516 receive~ recorded;
+#X obj -5568 -24498 bng 15 250 50 0 empty empty Pause 0 -24 0 24 -262144
 -1 -1;
-#X obj -3877 -24068 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj -5663 -24498 bng 15 250 50 0 empty empty Start 0 -24 0 24 -262144
 -1 -1;
 #N canvas 0 0 958 988 fileloader 0;
 #X obj -1866 -23314 openpanel;
@@ -83,45 +78,42 @@
 #X connect 8 0 1 0;
 #X connect 10 0 3 0;
 #X connect 11 0 6 0;
-#X restore -4459 -23627 pd fileloader;
-#X obj -4183 -24040 multiplex~;
-#X obj -4291 -24016 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1
--1 0 1;
-#X obj -4319 -23846 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X restore -6460 -24257 pd fileloader;
+#X obj -5969 -24470 multiplex~;
+#X obj -6114 -24535 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj -6242 -24476 bng 15 250 50 0 empty empty empty 0 0 0 4 -262144
 -1 -1;
-#X text -3909 -24135 Click this to start;
-#X text -3770 -24136 Click this to stop;
-#X text -3521 -24135 Click this to restart;
-#X text -4455 -24071 Click this to switch between recorded and live
-audio;
-#X text -4490 -23922 Click this to choose a file;
-#X text -4350 -23922 Click this to analyse the file;
-#X connect 0 0 22 0;
-#X connect 0 1 25 0;
-#X connect 1 0 37 1;
-#X connect 2 0 36 0;
-#X connect 3 0 5 0;
-#X connect 5 0 9 0;
-#X connect 11 0 22 3;
-#X connect 11 0 25 3;
-#X connect 12 0 13 0;
-#X connect 13 0 19 0;
-#X connect 22 0 23 0;
-#X connect 22 2 17 0;
-#X connect 22 3 12 0;
-#X connect 25 0 24 0;
-#X connect 25 2 7 0;
-#X connect 25 3 3 0;
-#X connect 33 0 37 0;
-#X connect 34 0 22 2;
-#X connect 34 0 25 2;
-#X connect 35 0 22 1;
-#X connect 35 0 25 1;
-#X connect 36 0 6 0;
-#X connect 36 1 11 0;
-#X connect 36 1 35 0;
-#X connect 36 2 34 0;
-#X connect 37 0 0 0;
-#X connect 38 0 37 0;
-#X connect 38 0 34 0;
-#X connect 39 0 36 1;
+#X text -6542 -24544 Toggle between recorded and live audio;
+#X obj -6152 -24358 f1Histogram;
+#X text -6541 -24501 Choose File;
+#X text -6334 -24501 Analyse File;
+#X connect 0 0 34 0;
+#X connect 0 1 20 0;
+#X connect 1 0 30 0;
+#X connect 2 0 29 0;
+#X connect 3 0 4 0;
+#X connect 4 0 7 0;
+#X connect 8 0 20 3;
+#X connect 8 0 34 3;
+#X connect 9 0 10 0;
+#X connect 10 0 15 0;
+#X connect 20 0 19 0;
+#X connect 20 2 6 0;
+#X connect 20 3 3 0;
+#X connect 26 0 30 1;
+#X connect 27 0 20 2;
+#X connect 27 0 34 2;
+#X connect 28 0 20 1;
+#X connect 28 0 34 1;
+#X connect 29 0 5 0;
+#X connect 29 1 8 0;
+#X connect 29 1 28 0;
+#X connect 29 2 27 0;
+#X connect 30 0 0 0;
+#X connect 31 0 30 0;
+#X connect 31 0 8 0;
+#X connect 32 0 29 1;
+#X connect 34 0 18 0;
+#X connect 34 2 14 0;
+#X connect 34 3 9 0;
