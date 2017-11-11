@@ -1,4 +1,4 @@
-#N canvas -8 -8 1920 997 24;
+#N canvas 953 0 958 988 24;
 #X obj -5598 -24438 formant_reader;
 #X obj -5972 -24539 adc~;
 #X obj -6460 -24476 bng 15 250 50 0 empty empty empty 0 0 0 10 -262144
@@ -16,8 +16,7 @@
 #X text -5556 -24205 100%;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array Formant-2 10 float 5;
-#A 0 0.00727802 0.00727802 0.0131004 0.0946143 0.315866 0.342067 0.131004
-0.0684134 0.0203785 0;
+#A 0 0 0 0 0 0.142857 0 0 0.142857 0.285714 0;
 #X coords 0 1 9 0 400 300 1 0 0;
 #X restore -5508 -24204 graph;
 #X floatatom -5733 -24358 8 0 0 2 Mean - -;
@@ -31,8 +30,7 @@
 #X text -6143 -24205 100%;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array Formant-1 10 float 5;
-#A 0 0 0.157205 0.0465793 0.120815 0.190684 0.243086 0.151383 0.0582242
-0.0320233 0;
+#A 0 0 0 0.142857 0 0 0 0.142857 0 0.714286 0;
 #X coords 0 1 9 0 400 300 1 0 0;
 #X restore -6095 -24204 graph;
 #X text -5987 -24232 Histogram;
@@ -81,13 +79,14 @@
 #X restore -6460 -24257 pd fileloader;
 #X obj -5969 -24470 multiplex~;
 #X obj -6114 -24535 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 1;
 #X obj -6242 -24476 bng 15 250 50 0 empty empty empty 0 0 0 4 -262144
 -1 -1;
 #X text -6542 -24544 Toggle between recorded and live audio;
 #X obj -6152 -24358 f1Histogram;
 #X text -6541 -24501 Choose File;
 #X text -6334 -24501 Analyse File;
+#X obj -6390 -23910 segment_durations;
 #X connect 0 0 34 0;
 #X connect 0 1 20 0;
 #X connect 1 0 30 0;
@@ -111,6 +110,7 @@
 #X connect 29 1 28 0;
 #X connect 29 2 27 0;
 #X connect 30 0 0 0;
+#X connect 30 0 37 0;
 #X connect 31 0 30 0;
 #X connect 31 0 8 0;
 #X connect 32 0 29 1;
