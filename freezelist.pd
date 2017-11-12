@@ -1,4 +1,4 @@
-#N canvas 953 0 958 988 24;
+#N canvas -8 -8 1920 997 24;
 #X obj -5280 -2907 makelist;
 #X msg -5280 -2883 0 0 0.0456735 0.0607053 0.12276 0.195992 0.216805
 0.16535 0.102525 0.0901908;
@@ -28,6 +28,7 @@
 #X text -4975 -3411 Run;
 #X obj -4771 -3380 inlet;
 #X text -4736 -3371 Pause;
+#X text -4953 -3051 Author: Jack Cheng Ding Han;
 #X connect 0 0 1 0;
 #X connect 2 0 4 0;
 #X connect 3 0 2 0;

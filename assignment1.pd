@@ -1,11 +1,11 @@
-#N canvas 0 0 1908 997 24;
-#X obj -7616 -25939 adc~;
-#X obj -7778 -26051 bng 15 250 50 0 empty empty Open -24 -12 0 24 -262144
--1 -1;
-#X obj -7828 -25925 multiplex~;
-#X obj -7638 -26051 bng 15 250 50 0 empty empty Analyse -24 -12 0 24
+#N canvas -8 -8 1920 997 24;
+#X obj -14092 -30773 adc~;
+#X obj -14254 -30885 bng 15 250 50 0 empty empty Open -24 -12 0 24
 -262144 -1 -1;
-#N canvas 0 0 1908 988 (subpatch) 0;
+#X obj -14304 -30759 multiplex~;
+#X obj -14114 -30885 bng 15 250 50 0 empty empty Analyse -24 -12 0
+24 -262144 -1 -1;
+#N canvas 193 248 958 988 (subpatch) 0;
 #X obj -108 -83 formant_reader;
 #X obj 566 -115 bng 15 250 50 0 empty empty Clear 0 -24 0 24 -262144
 -1 -1;
@@ -13,7 +13,7 @@
 -1 -1;
 #X obj 191 -66 bng 15 250 50 0 empty empty Start 0 -24 0 24 -262144
 -1 -1;
-#N canvas 705 321 958 988 (subpatch) 0;
+#N canvas 712 284 958 988 (subpatch) 0;
 #X floatatom 102 375 8 0 0 2 Variance - -;
 #X obj -278 278 expr sqrt($f1);
 #X floatatom 6 375 8 0 0 2 Mean - -;
@@ -21,8 +21,8 @@
 #X obj -273 122 send Formant-1;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array Formant-1 10 float 5;
-#A 0 0 0.00947867 0.0236967 0.104265 0.151659 0.251185 0.203791 0.137441
-0.118483 0;
+#A 0 0 0.302222 0.0844444 0.111111 0.106667 0.08 0.0888889 0.0755556
+0.151111 0;
 #X coords 0 1 9 0 400 300 1 0 0;
 #X restore 0 21 graph;
 #X obj -160 27 f1Histogram;
@@ -50,8 +50,8 @@
 #X floatatom 198 375 8 0 0 2 Standard-Deviation - -;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array Formant-2 10 float 5;
-#A 0 0.00473934 0.014218 0.0379147 0.146919 0.336493 0.279621 0.118483
-0.0521327 0.00947867 0;
+#A 0 0.00888889 0.0311111 0.0711111 0.111111 0.16 0.12 0.0933333 0.128889
+0.271111 0;
 #X coords 0 1 9 0 400 300 1 0 0;
 #X restore 0 21 graph;
 #X obj -160 -32 inlet;
@@ -91,14 +91,14 @@
 #X connect 8 0 2 0;
 #X connect 9 0 1 0;
 #X coords 0 1 100 -1 800 440 1 0 0;
-#X restore -8461 -25875 graph;
-#X obj -7029 -26051 bng 15 250 50 0 empty empty Clear -24 -12 0 24
+#X restore -14937 -30709 graph;
+#X obj -13505 -30885 bng 15 250 50 0 empty empty Clear -24 -12 0 24
 -262144 -1 -1;
-#X obj -7294 -26051 bng 15 250 50 0 empty empty Pause -24 -12 0 24
+#X obj -13770 -30885 bng 15 250 50 0 empty empty Pause -24 -12 0 24
 -262144 -1 -1;
-#X obj -7397 -26051 bng 15 250 50 0 empty empty Start -24 -12 0 24
+#X obj -13873 -30885 bng 15 250 50 0 empty empty Start -24 -12 0 24
 -262144 -1 -1;
-#N canvas 0 0 958 988 fileloader 0;
+#N canvas 172 195 958 988 fileloader 0;
 #X obj -1866 -23314 openpanel;
 #X msg -1766 -23069 open \$1;
 #X obj -1679 -23260 readsf~;
@@ -119,6 +119,7 @@
 ;
 #X obj -1253 -22924 outlet;
 #X text -1879 -23406 Click this to choose a file;
+#X text -1463 -23202 AUTHOR: JACK CHENG DING HAN;
 #X connect 0 0 7 0;
 #X connect 0 0 8 0;
 #X connect 1 0 2 0;
@@ -134,10 +135,10 @@
 #X connect 8 0 1 0;
 #X connect 10 0 3 0;
 #X connect 11 0 6 0;
-#X restore -7720 -25978 pd fileloader;
-#X obj -7954 -26066 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#N canvas 0 0 1920 997 (subpatch) 0;
+#X restore -14196 -30812 pd fileloader;
+#X obj -14430 -30900 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
+-1 -1 1;
+#N canvas 439 250 958 988 (subpatch) 0;
 #X obj 566 -115 bng 15 250 50 0 empty empty Clear 0 -24 0 24 -262144
 -1 -1;
 #X obj 363 -116 bng 15 250 50 0 empty empty Pause 0 -24 0 24 -262144
@@ -151,7 +152,8 @@
 #X floatatom 198 375 8 0 0 2 Standard-Deviation - -;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array Voiced-Durations 10 float 5;
-#A 0 0.356784 0.040201 0 0 0 0 0 0 0 0;
+#A 0 0.14749 0.150628 0.164226 0.112971 0.0962343 0.0721757 0.039749
+0.0303347 0.0899582 0;
 #X coords 0 1 9 0 400 300 1 0 0;
 #X restore 0 21 graph;
 #X obj -160 -32 inlet;
@@ -160,6 +162,8 @@
 #X obj 87 -38 inlet;
 #X obj -160 27 voicing-histogram;
 #X obj -273 122 send Voiced-Durations;
+#X text 3 318 0;
+#X text 359 318 6 s;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X connect 5 0 9 0;
@@ -171,13 +175,14 @@
 #X connect 9 3 0 0;
 #X coords 0 1 100 -1 400 400 1 0 0;
 #X restore 0 40 graph;
-#N canvas 0 0 958 988 (subpatch) 0;
+#N canvas 333 247 958 988 (subpatch) 0;
 #X floatatom 102 375 8 0 0 2 Variance - -;
 #X obj -278 278 expr sqrt($f1);
 #X floatatom 198 375 8 0 0 2 Standard-Deviation - -;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array Unvoiced-Durations 10 float 5;
-#A 0 0.714286 0 0 0 0 0 0 0 0 0;
+#A 0 0.260465 0.0511628 0.0744186 0.0883721 0.0511628 0.0465116 0.0232558
+0.0418605 0.204651 0;
 #X coords 0 1 9 0 400 300 1 0 0;
 #X restore 0 21 graph;
 #X obj -160 -32 inlet;
@@ -187,6 +192,8 @@
 #X obj -160 27 voicing-histogram;
 #X obj -273 122 send Unvoiced-Durations;
 #X floatatom 6 375 8 0 0 2 Mean - -;
+#X text 3 318 0;
+#X text 359 318 6 s;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 4 0 8 0;
@@ -217,12 +224,15 @@
 #X connect 9 0 3 0;
 #X connect 9 1 4 0;
 #X coords 0 1 100 -1 800 440 1 0 0;
-#X restore -7661 -25875 graph;
-#X text -7332 -26104 Live Audio Controls;
-#X text -7813 -26104 Recorded Audio Controls;
-#X text -8450 -25974 AUTHORS: Jack Cheng Ding Han & Folabi Nathan-Marsh
+#X restore -14137 -30709 graph;
+#X text -13808 -30938 Live Audio Controls;
+#X text -14289 -30938 Recorded Audio Controls;
+#X text -14860 -30908 Toggle between live and recorded audio;
+#X text -14936 -30802 AUTHORS: Jack Cheng Ding Han & Afolabi Nathan-Marsh
 ;
-#X text -8384 -26074 Toggle between live and recorded audio;
+#X obj -14525 -30859 output~;
+#X obj -14406 -30885 catch~ audio;
+#X text -14725 -30848 Volume/Mute Audio;
 #X connect 0 0 2 0;
 #X connect 1 0 8 0;
 #X connect 2 0 4 0;
@@ -240,3 +250,5 @@
 #X connect 8 2 6 0;
 #X connect 9 0 5 0;
 #X connect 9 0 2 0;
+#X connect 16 0 15 0;
+#X connect 16 0 15 1;

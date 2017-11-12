@@ -1,11 +1,11 @@
-#N canvas 0 0 1908 997 10;
-#X floatatom 26 261 5 0 0 0 - - -;
+#N canvas 0 0 1908 997 24;
+#X floatatom 117 311 5 0 0 0 - - -;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array Zero-Crossings 600 float 0;
 #X coords 0 512 599 0 1200 400 1 0 0;
-#X restore 409 437 graph;
-#X obj 30 290 tabwrite Zero-Crossings;
-#X obj 165 29 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X restore 573 501 graph;
+#X obj 121 340 tabwrite Zero-Crossings;
+#X obj 163 61 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #N canvas 1390 462 481 252 zerocross~ 0;
 #X msg 106 126 clear;
@@ -45,31 +45,32 @@
 #X connect 13 0 14 0;
 #X connect 14 0 2 0;
 #X connect 14 0 3 0;
-#X restore 30 232 pd zerocross~;
-#X floatatom 165 262 5 0 0 0 - - -;
-#X obj 165 155 int;
-#X obj 198 155 + 1;
-#X obj 165 125 metro 20;
-#X obj 45 195 tabwrite~ Waveform;
-#X msg 266 96 stop;
+#X restore 121 282 pd zerocross~;
+#X floatatom 256 312 5 0 0 0 - - -;
+#X obj 256 205 int;
+#X obj 289 205 + 1;
+#X obj 256 175 metro 20;
+#X obj 136 245 tabwrite~ Waveform;
+#X msg 342 110 stop;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array Waveform 529200 float 2;
 #X coords 0 1 529200 -1 1200 400 1 0 0;
-#X restore 419 23 graph;
-#X obj 230 155 zexy/wrap 600;
-#X obj 215 217 select 600;
-#X obj 229 59 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X restore 576 40 graph;
+#X obj 321 205 zexy/wrap 600;
+#X obj 306 267 select 600;
+#X obj 319 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 162 2 inlet;
-#X obj 330 22 inlet;
-#X obj 59 384 snapshot~;
-#X obj 61 337 sig~;
-#X floatatom 62 420 5 0 0 0 - - -;
+#X obj 400 20 inlet;
+#X obj 150 434 snapshot~;
+#X obj 152 387 sig~;
+#X floatatom 153 470 5 0 0 0 - - -;
 #X text 185 27 Start Counting;
-#X text 254 60 Pause Counting;
+#X text 344 60 Pause Counting;
 #X obj 12 95 inlet~;
-#X obj 101 517 outlet;
-#X text 31 607 Author: Folabi Nathan-Marsh;
+#X obj 192 567 outlet;
+#X text 188 644 Author: Folabi Nathan-Marsh;
+#X text 7 52 Input Signal;
 #X connect 0 0 2 0;
 #X connect 0 0 18 0;
 #X connect 3 0 8 0;
